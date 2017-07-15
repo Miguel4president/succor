@@ -24,5 +24,6 @@ defmodule Succor.Web.Router do
     pipe_through :api
 
     resources "/teams", TeamController, except: [:new, :edit]
+    resources "/players", PlayerController, except: [:new, :edit]
   end
 end

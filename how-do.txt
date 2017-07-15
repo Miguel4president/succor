@@ -3,8 +3,13 @@ How I built this app
 
 1. mix phx.new #{app_name}
 2. Update .gitignore
+
 3. mix phx.gen.json Management Team teams name:string
 4. edit migration to index + make name unique
 
+5. mix phx.gen.json Management Player players name:string email:string team_id:references:team
+6. edit migration: add index...still haven't setup many to many relationship with team yet.
+
+7.
 
 

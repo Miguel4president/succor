@@ -1,0 +1,5 @@
+How I built this app
+ - Should have not used brunch, but I did.
+
+1. mix phx.new #{app_name}
+2. Update .gitignore

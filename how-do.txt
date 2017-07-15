@@ -3,3 +3,8 @@ How I built this app
 
 1. mix phx.new #{app_name}
 2. Update .gitignore
+3. mix phx.gen.json Management Team teams name:string
+4. edit migration to index + make name unique
+
+
+

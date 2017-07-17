@@ -7,6 +7,7 @@ defmodule Succor.Management do
   alias Succor.Repo
 
   alias Succor.Management.Team
+  alias Succor.Management.Player
 
   @doc """
   Returns the list of teams.
@@ -36,6 +37,30 @@ defmodule Succor.Management do
 
   """
   def get_team!(id), do: Repo.get!(Team, id)
+  def get_team_and_players(team_id), do: from(e in Team, preload: [:players]) |> Repo.get(team_id)
+
+  def get_player_and_teams(player_id), do: from(e in Player, preload: [:teams]) |> Repo.get(player_id)
+  def something_team(id) do
+    Repo.get!(Team, id)
+    |> preload(:players)
+  end
+
+  def player_cast(id, attrs) do
+    get_player_and_teams(id)
+    |> Ecto.Changeset.cast(attrs, [])
+    # |> Ecto.Changeset.cast_assoc(:teams)
+  end
+
+  def player_put(player, assoc) do
+      player
+      |> put_assoc(:teams, assoc)
+  end
+
+#   def add_player_with_team(attrs) do
+#     %Player{}
+#     |> Player.changeset(attrs)
+#     |> Repo.insert()
+#   end
 
   @doc """
   Creates a team.

@@ -1,5 +1,8 @@
 # Succor
 
+Will eventually be an app for describing your soccer team and managing it's members.
+Ideal goal, make sending emails to the team automated and fun to send.
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
